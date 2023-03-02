@@ -1,4 +1,3 @@
-import ListaExercicios.ListaExercicios1;
 import Variaveis.Variaveis;
 
 public class App {

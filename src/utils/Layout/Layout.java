@@ -9,14 +9,28 @@ public class Layout {
 
     public static int InputInteger(String mensagem) {
         String valorString = Input(mensagem);
-        
-        return Integer.parseInt(valorString);
+        int valor = 0;
+        try {
+            valor = Integer.parseInt(valorString);
+            
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Valor inválido! Insira um número inteiro válido.");
+            valor = InputInteger(mensagem);
+        }
+
+        return valor;
     }
 
     public static Float InputFloat(String mensagem) {
         String valorString = Input(mensagem);
-        
-        return Float.parseFloat(valorString);
+        float valor = 0.0f;
+        try {
+            valor = Float.parseFloat(valorString); 
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Valor inválido! Insira um número real válido.");
+            valor = InputFloat(mensagem);
+        }
+        return valor;
     }
 
     public static void Output(Object valor) {

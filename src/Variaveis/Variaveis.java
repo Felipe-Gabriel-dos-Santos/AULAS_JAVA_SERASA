@@ -1,7 +1,5 @@
 package Variaveis;
 
-import java.util.jar.Attributes.Name;
-
 public class Variaveis {
     
     public static void Print() {
