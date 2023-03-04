@@ -14,7 +14,7 @@ public class Layout {
             valor = Integer.parseInt(valorString);
             
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Valor inválido! Insira um número inteiro válido.");
+            Output("Valor inválido! Insira um número inteiro válido.");
             valor = InputInteger(mensagem);
         }
 
@@ -27,7 +27,7 @@ public class Layout {
         try {
             valor = Float.parseFloat(valorString); 
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Valor inválido! Insira um número real válido.");
+            Output("Valor inválido! Insira um número real válido.");
             valor = InputFloat(mensagem);
         }
         return valor;
