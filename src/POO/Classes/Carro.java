@@ -30,15 +30,19 @@ public class Carro {
 
     public void andar() {
 
+        if (!status) {
+            System.out.println("O carro está desligado! não é possível andar.");
+            return;
+        }
         while (status) {
             if (velocidadeAtual < velocidadeMaxima) 
-                velocidadeAtual += velocidadeMaxima / new Random().nextDouble(0.1, 0.5);
+                velocidadeAtual += new Random().nextInt(0, 1);
 
-                int quantidadeEmLitros = Math.round(velocidadeAtual);
-                tanque.Consumir(quantidadeEmLitros);
+                tanque.Consumir(velocidadeAtual);
+                System.out.println("Andando! consumindo: " + velocidadeAtual );
 
                 int quantidadeCombustivel = tanque.VerificaQuantidadeNoTanque();
-                status = status && quantidadeCombustivel > 0;
+                status = quantidadeCombustivel > 0;
         }
     }
 
